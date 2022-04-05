@@ -29,7 +29,6 @@ int main(int argc, char *argv[]){
     bool valido = false;
     bool terminar = false;
     
-
     system("cls");
 
     while(terminar == false){
@@ -47,6 +46,9 @@ int main(int argc, char *argv[]){
                     }
                 }
 
+                cadena[i] = entrada;
+                i++;
+
                 if(q0_q1 == true){
                     estado = q1;
                     q0_q1 = false;
@@ -55,8 +57,6 @@ int main(int argc, char *argv[]){
                     caracteresNoVal[cuentaCaracteresInv] = entrada;
                     cuentaCaracteresInv++;
                 }
-                cadena[i] = entrada;
-                i++;
                 break;
             case q1:
                 printf("\n==============================\n");
@@ -68,6 +68,9 @@ int main(int argc, char *argv[]){
                 printf("Entrada: ");
                 entrada = getchar();
                 getchar();
+
+                cadena[i] = entrada;
+                i++;
 
                 for(int j = 0; j<=9; j++){
                     if(entrada == digitos[j]){
@@ -83,8 +86,6 @@ int main(int argc, char *argv[]){
                     }   
                 }
                 q1_q1 = false;
-                cadena[i] = entrada;
-                i++;
                 break;
             case q2:
                 printf("\n==============================\n");
@@ -101,6 +102,7 @@ int main(int argc, char *argv[]){
                 getchar();
                 cadena[i] = entrada;
                 i++;
+ 
                 estado = q2;             
                 
                 for(int j = 0; j<=9; j++){
